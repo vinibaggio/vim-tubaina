@@ -1,4 +1,5 @@
 vim-tubaina
 ===========
 
-A syntax highlight and autoclose for tubaina markup language.
+A syntax highlight for tubaina markup language.
+Autoclose for tags is yet to come.
