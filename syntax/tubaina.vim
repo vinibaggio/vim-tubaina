@@ -6,9 +6,12 @@ if exists("b:current_syntax")
   finish
 endif
 
+syn spell toplevel
+
 syn case ignore
 
 syn include @rubyTop syntax/ruby.vim
+syn include @erbTop syntax/eruby.vim
 
 syn match tubainaLineStart "^\s*" contained
 
@@ -18,7 +21,8 @@ syn match tubainaKeyword "\[.*\]" contains=tubainaKeywords
 
 syn region tubainaCodeBlock matchgroup=tubainaBlockOpen start="\[code.*\]" matchgroup=tubainaBlockClose end="\[/code\]" keepend contains=tubainaLineStart
 syn region tubainaCodeRubyBlock matchgroup=tubainaBlockOpen start="\[code.*ruby.*\]" matchgroup=tubainaBlockClose end="\[/code\]" keepend contains=@rubyTop
-syn region tubainaBoxBlock matchgroup=tubainaBoxOpen start="\[box.*\]" matchgroup=tubainaBoxClose end="\[/box\]" keepend contains=tubainaLineStart,tubainaInlineCode
+syn region tubainaCodeErbBlock matchgroup=tubainaBlockOpen start="\[code.*erb.*\]" matchgroup=tubainaBlockClose end="\[/code\]" keepend contains=@erbTop
+syn region tubainaBoxBlock matchgroup=tubainaBoxOpen start="\[box.*\]" matchgroup=tubainaBoxClose end="\[/box\]" keepend contains=tubainaLineStart,tubainaInlineCode,@Spell
 syn region tubainaQuote start="\[quote" end="\]" keepend contains=tubainaLineStart
 
 syn match tubainaTitle "\[section.*\]" contains=tubainaLineStart
